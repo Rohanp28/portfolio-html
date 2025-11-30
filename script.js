@@ -117,7 +117,7 @@ const projects = [
       "A modern, responsive portfolio website showcasing my skills and experience with glassmorphic design.",
     techStack: ["React", "CSS", "JavaScript"],
     github: "https://github.com/Rohanp28/my-portfolio",
-    live: "#",
+    live: "https://rohanpatare-portfolio.vercel.app/",
   },
   {
     title: "Todo App",
@@ -232,10 +232,13 @@ function getTechIcon(name) {
       <circle cx="12" cy="12" r="2" fill="currentColor" />
     </svg>`,
   };
-  return icons[name] || `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  return (
+    icons[name] ||
+    `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="12" cy="12" r="10" />
     <path d="M8 12h8" stroke-width="2" />
-  </svg>`;
+  </svg>`
+  );
 }
 
 // Theme Management
@@ -280,7 +283,7 @@ function toggleMobileMenu() {
   mobileMenuOpen = !mobileMenuOpen;
   const menu = document.getElementById("mobile-menu");
   const hamburger = document.querySelector(".hamburger");
-  
+
   if (mobileMenuOpen) {
     menu.classList.add("open");
     hamburger.classList.add("active");
@@ -332,7 +335,9 @@ function renderTechnologies() {
   grid.innerHTML = technologies
     .map(
       (tech) => `
-    <div class="tech-item ${tech.color === "#000000" ? "tech-dark" : ""}" style="--tech-color: ${tech.color}">
+    <div class="tech-item ${
+      tech.color === "#000000" ? "tech-dark" : ""
+    }" style="--tech-color: ${tech.color}">
       <div class="tech-icon">${getTechIcon(tech.name)}</div>
       <span class="tech-name">${tech.name}</span>
     </div>
@@ -356,7 +361,9 @@ function renderExperiences() {
       ${
         role.technologies
           ? `<div class="experience-badges">
-        ${role.technologies.map((tech) => `<span class="tech-badge">${tech}</span>`).join("")}
+        ${role.technologies
+          .map((tech) => `<span class="tech-badge">${tech}</span>`)
+          .join("")}
       </div>`
           : ""
       }
@@ -390,7 +397,9 @@ function renderProjects() {
       <h3>${project.title}</h3>
       <p class="project-description">${project.description}</p>
       <div class="project-technologies">
-        ${project.techStack.map((tech) => `<span class="tech-badge">${tech}</span>`).join("")}
+        ${project.techStack
+          .map((tech) => `<span class="tech-badge">${tech}</span>`)
+          .join("")}
       </div>
       ${
         project.github || project.live !== "#"
@@ -426,6 +435,25 @@ function renderProjects() {
     .join("");
 }
 
+// Resume Download - Forces download instead of opening in browser
+function downloadPDF() {
+  const pdfPath = "Rohan_Patare_Resume.pdf"; // exact file name
+
+  fetch(pdfPath)
+    .then((response) => response.blob())
+    .then((blob) => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Rohan_Patare_Resume.pdf"; // force download
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    })
+    .catch(() => alert("PDF not found! Check file name."));
+}
+
 // Initialize
 document.addEventListener("DOMContentLoaded", () => {
   // Re-initialize theme to ensure icons are updated
@@ -434,8 +462,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderExperiences();
   renderProjects();
   window.addEventListener("scroll", handleScroll);
-  
+
   // Initial scroll check
   handleScroll();
 });
-

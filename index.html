@@ -1,303 +1,416 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rohan Patare - Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    :root {
-      color-scheme: dark;
-    }
-  </style>
-  <script>
-    // Set theme immediately to prevent flash
-    (function() {
-      const theme = localStorage.getItem("theme") || "dark";
-      document.documentElement.setAttribute("data-theme", theme);
-      document.body.setAttribute("data-theme", theme);
-    })();
-  </script>
-</head>
-<body>
-  <div class="noise-overlay" aria-hidden="true"></div>
-  
-  <header class="site-header">
-    <button class="logo" onclick="handleNavClick('hero')">RP</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rohan Patare - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+    </style>
+    <script>
+      // Set theme immediately to prevent flash
+      (function () {
+        const theme = localStorage.getItem("theme") || "dark";
+        document.documentElement.setAttribute("data-theme", theme);
+        document.body.setAttribute("data-theme", theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="noise-overlay" aria-hidden="true"></div>
 
-    <!-- Desktop Navigation -->
-    <nav class="site-nav desktop-nav" aria-label="Primary">
-      <button class="nav-link" onclick="handleNavClick('home')">Home</button>
-      <button class="nav-link" onclick="handleNavClick('about')">About</button>
-      <button class="nav-link" onclick="handleNavClick('skills')">Skills</button>
-      <button class="nav-link" onclick="handleNavClick('experience')">Experience</button>
-      <button class="nav-link" onclick="handleNavClick('projects')">Projects</button>
-      <button class="nav-link" onclick="handleNavClick('services')">Services</button>
-      <button class="nav-link" onclick="handleNavClick('contact')">Contact</button>
-    </nav>
+    <header class="site-header">
+      <button class="logo" onclick="handleNavClick('hero')">RP</button>
 
-    <!-- Desktop Actions -->
-    <div class="header-actions desktop-actions">
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-        <span id="theme-icon">☀️</span>
-      </button>
-    </div>
-
-    <!-- Mobile Actions -->
-    <div class="mobile-actions">
-      <button class="theme-toggle-mobile" onclick="toggleTheme()" aria-label="Toggle theme">
-        <span id="theme-icon-mobile">☀️</span>
-      </button>
-      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-
-    <!-- Mobile Navigation Menu -->
-    <div class="mobile-menu" id="mobile-menu">
-      <nav class="mobile-nav">
-        <button class="mobile-nav-link" onclick="handleNavClick('home')">Home</button>
-        <button class="mobile-nav-link" onclick="handleNavClick('about')">About</button>
-        <button class="mobile-nav-link" onclick="handleNavClick('skills')">Skills</button>
-        <button class="mobile-nav-link" onclick="handleNavClick('experience')">Experience</button>
-        <button class="mobile-nav-link" onclick="handleNavClick('services')">Services</button>
-        <button class="mobile-nav-link" onclick="handleNavClick('education')">Education</button>
-        <button class="mobile-nav-link" onclick="handleNavClick('contact')">Contact</button>
+      <!-- Desktop Navigation -->
+      <nav class="site-nav desktop-nav" aria-label="Primary">
+        <button class="nav-link" onclick="handleNavClick('home')">Home</button>
+        <button class="nav-link" onclick="handleNavClick('about')">
+          About
+        </button>
+        <button class="nav-link" onclick="handleNavClick('skills')">
+          Skills
+        </button>
+        <button class="nav-link" onclick="handleNavClick('experience')">
+          Experience
+        </button>
+        <button class="nav-link" onclick="handleNavClick('projects')">
+          Projects
+        </button>
+        <button class="nav-link" onclick="handleNavClick('services')">
+          Services
+        </button>
+        <button class="nav-link" onclick="handleNavClick('contact')">
+          Contact
+        </button>
       </nav>
-    </div>
-  </header>
 
-  <main>
-    <section id="hero" class="hero glass-card">
-      <div class="hero-copy">
-        <p class="eyebrow">Frontend-Focused Full-Stack MERN Engineer</p>
-        <h1>Rohan Patare</h1>
-        <p class="lede">
-          I'm a frontend-focused engineer with strong full-stack MERN
-          abilities. I build fast, smooth, and reliable web experiences end
-          to end — from clean, intuitive interfaces to solid backend APIs. I
-          learn by building, experimenting, and refining until things feel
-          right. I bring a product-first mindset, ensuring every feature
-          feels polished, performant, and dependable.
-        </p>
-        <div class="hero-meta">
-          <span>Pune · Remote friendly</span>
-          <span>rohanpatare98@gmail.com</span>
-          <span>
-            <a href="https://linkedin.com/in/rohan-patare" target="_blank" rel="noreferrer">LinkedIn</a>
-          </span>
+      <!-- Desktop Actions -->
+      <div class="header-actions desktop-actions">
+        <button
+          class="theme-toggle"
+          onclick="toggleTheme()"
+          aria-label="Toggle theme"
+        >
+          <span id="theme-icon">☀️</span>
+        </button>
+      </div>
+
+      <!-- Mobile Actions -->
+      <div class="mobile-actions">
+        <button
+          class="theme-toggle-mobile"
+          onclick="toggleTheme()"
+          aria-label="Toggle theme"
+        >
+          <span id="theme-icon-mobile">☀️</span>
+        </button>
+        <button
+          class="hamburger"
+          onclick="toggleMobileMenu()"
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+          <button class="mobile-nav-link" onclick="handleNavClick('home')">
+            Home
+          </button>
+          <button class="mobile-nav-link" onclick="handleNavClick('about')">
+            About
+          </button>
+          <button class="mobile-nav-link" onclick="handleNavClick('skills')">
+            Skills
+          </button>
+          <button
+            class="mobile-nav-link"
+            onclick="handleNavClick('experience')"
+          >
+            Experience
+          </button>
+          <button class="mobile-nav-link" onclick="handleNavClick('services')">
+            Services
+          </button>
+          <button class="mobile-nav-link" onclick="handleNavClick('education')">
+            Education
+          </button>
+          <button class="mobile-nav-link" onclick="handleNavClick('contact')">
+            Contact
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="hero glass-card">
+        <div class="hero-copy">
+          <p class="eyebrow">Frontend-Focused Full-Stack MERN Engineer</p>
+          <h1>Rohan Patare</h1>
+          <p class="lede">
+            I'm a frontend-focused engineer with strong full-stack MERN
+            abilities. I build fast, smooth, and reliable web experiences end to
+            end — from clean, intuitive interfaces to solid backend APIs. I
+            learn by building, experimenting, and refining until things feel
+            right. I bring a product-first mindset, ensuring every feature feels
+            polished, performant, and dependable.
+          </p>
+          <div class="hero-meta">
+            <span>Pune · Remote friendly</span>
+            <span>rohanpatare98@gmail.com</span>
+            <span>
+              <a
+                href="https://linkedin.com/in/rohan-patare"
+                target="_blank"
+                rel="noreferrer"
+                >LinkedIn</a
+              >
+            </span>
+          </div>
+          <div class="hero-cta">
+            <button class="ghost-btn" onclick="handleNavClick('contact')">
+              Let's Collaborate
+            </button>
+            <button class="ghost-btn" onclick="downloadPDF()">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="margin-right: 0.5rem"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Download Resume
+            </button>
+          </div>
         </div>
-        <div class="hero-cta">
-          <button class="ghost-btn" onclick="handleNavClick('contact')">Let's Collaborate</button>
-          <a class="ghost-btn" href="resume.pdf" download="Rohan_Patare_Latest_DetailedResume.pdf">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            Download Resume
+        <div class="hero-stats glass-card">
+          <div>
+            <p class="stat-value">5+ Years</p>
+            <p class="stat-label">
+              Delivering reliable, high-quality web experiences across the
+              stack.
+            </p>
+          </div>
+          <div>
+            <p class="stat-value">Self-Taught Path</p>
+            <p class="stat-label">
+              Built my skillset through relentless building, experimenting, and
+              learning by doing.
+            </p>
+          </div>
+          <div>
+            <p class="stat-value">Craft-Focused</p>
+            <p class="stat-label">
+              Focused on thoughtful UX, clean engineering, and long-term
+              maintainability.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="grid-section">
+        <article class="glass-card intro">
+          <h2>Summary</h2>
+          <p>
+            I'm a full-stack engineer with 5+ years of experience, specializing
+            in frontend development. I build fast, scalable, and intuitive web
+            applications using React and TypeScript, backed by solid MERN
+            full-stack abilities when end-to-end thinking is required.
+          </p>
+          <br />
+          <p>
+            I enjoy transforming complex requirements into clean, user-friendly
+            interfaces that feel smooth and perform well. I thrive in
+            collaborative teams and love working across design, product, and
+            engineering to ship features that genuinely improve the user
+            experience.
+          </p>
+        </article>
+        <article class="glass-card badges">
+          <h3>Highlights</h3>
+          <ul>
+            <li>Turning complexity into clean, intuitive experiences</li>
+            <li>Blending frontend craft with full-stack depth</li>
+            <li>Delivering polished features with a product-first mindset</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="skills" class="glass-card">
+        <div class="section-heading">
+          <p class="eyebrow">Technical Skills</p>
+          <h2>Tools I trust</h2>
+        </div>
+        <div class="tech-grid" id="tech-grid"></div>
+      </section>
+
+      <section id="experience" class="timeline">
+        <div class="section-heading">
+          <p class="eyebrow">Career</p>
+          <h2>Recent Experience</h2>
+        </div>
+        <ol class="timeline-list" id="experience-list"></ol>
+      </section>
+
+      <section id="projects" class="glass-card">
+        <div class="section-heading">
+          <p class="eyebrow">Portfolio</p>
+          <h2>Featured Projects</h2>
+        </div>
+        <div class="projects-grid" id="projects-grid"></div>
+      </section>
+
+      <section id="services" class="glass-card">
+        <div class="section-heading">
+          <p class="eyebrow">What I Offer</p>
+          <h2>Services</h2>
+        </div>
+        <div class="services-grid">
+          <div class="service-card glass-card">
+            <div class="service-header">
+              <h3>Frontend Development</h3>
+              <div class="service-icon">⚛️</div>
+            </div>
+            <p>
+              Modern, intuitive, and performant interfaces built with React &
+              TypeScript.
+            </p>
+          </div>
+          <div class="service-card glass-card">
+            <div class="service-header">
+              <h3>Full-Stack MERN Development</h3>
+              <div class="service-icon">🚀</div>
+            </div>
+            <p>
+              End-to-end feature delivery: UI, APIs, backend logic, and database
+              workflows.
+            </p>
+          </div>
+          <div class="service-card glass-card">
+            <div class="service-header">
+              <h3>API Development & Integration</h3>
+              <div class="service-icon">🔌</div>
+            </div>
+            <p>
+              Building and integrating REST APIs for smooth, reliable
+              communication.
+            </p>
+          </div>
+          <div class="service-card glass-card">
+            <div class="service-header">
+              <h3>Performance Optimization</h3>
+              <div class="service-icon">⚡</div>
+            </div>
+            <p>
+              Improving speed, stability, and overall application performance.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="grid-section">
+        <article class="glass-card education-card">
+          <div class="education-header">
+            <div class="education-icon">🎓</div>
+            <div class="section-heading">
+              <p class="eyebrow">Education</p>
+              <h2>Foundations</h2>
+            </div>
+          </div>
+          <div class="education-content">
+            <h3 class="edu-title">Bachelor of Computer Engineering</h3>
+            <p class="edu-institution">
+              Vishwakarma Institute of Technology, Pune
+            </p>
+            <div class="edu-meta">
+              <span class="edu-period">Jun 2016 — May 2020</span>
+              <span class="edu-separator">·</span>
+              <span class="edu-cpi">CPI: 7.9</span>
+            </div>
+          </div>
+        </article>
+        <article class="glass-card certification-card">
+          <div class="certification-header">
+            <div class="certification-icon">🏆</div>
+            <div class="section-heading">
+              <p class="eyebrow">Certifications</p>
+              <h2>Recognition</h2>
+            </div>
+          </div>
+          <div class="certification-content">
+            <p class="certification-text">
+              Certificate of Appreciation for leading Flight Seatmap Integration
+              & Flights Polling at Musafir.com.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section id="contact" class="contact glass-card">
+        <div class="section-heading">
+          <p class="eyebrow">Get in touch</p>
+          <h2>Let's work together</h2>
+        </div>
+        <p class="contact-intro">
+          I'm always open to discussing new projects, creative ideas, or
+          opportunities to be part of your vision. Whether you're looking to
+          build a scalable web application, improve your existing platform, or
+          need a technical consultation, let's connect.
+        </p>
+        <div class="contact-status">
+          <span class="status-indicator"></span>
+          <span
+            >Available for freelance projects and full-time opportunities</span
+          >
+        </div>
+        <div class="contact-methods">
+          <a
+            href="mailto:rohanpatare98@gmail.com"
+            class="contact-method"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="contact-icon">✉️</div>
+            <div class="contact-details">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">rohanpatare98@gmail.com</span>
+            </div>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/rohan-patare-75b599162"
+            class="contact-method"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="contact-icon">💼</div>
+            <div class="contact-details">
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value">Connect with me</span>
+            </div>
+          </a>
+          <a
+            href="https://github.com/Rohanp28"
+            class="contact-method"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="contact-icon">💻</div>
+            <div class="contact-details">
+              <span class="contact-label">GitHub</span>
+              <span class="contact-value">View my work</span>
+            </div>
           </a>
         </div>
-      </div>
-      <div class="hero-stats glass-card">
-        <div>
-          <p class="stat-value">5+ Years</p>
-          <p class="stat-label">Delivering reliable, high-quality web experiences across the stack.</p>
-        </div>
-        <div>
-          <p class="stat-value">Self-Taught Path</p>
-          <p class="stat-label">Built my skillset through relentless building, experimenting, and learning by doing.</p>
-        </div>
-        <div>
-          <p class="stat-value">Craft-Focused</p>
-          <p class="stat-label">Focused on thoughtful UX, clean engineering, and long-term maintainability.</p>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <section id="about" class="grid-section">
-      <article class="glass-card intro">
-        <h2>Summary</h2>
-        <p>
-          I'm a full-stack engineer with 5+ years of experience,
-          specializing in frontend development. I build fast, scalable, and
-          intuitive web applications using React and TypeScript, backed by
-          solid MERN full-stack abilities when end-to-end thinking is
-          required.
-        </p>
-        <br>
-        <p>
-          I enjoy transforming complex requirements into clean,
-          user-friendly interfaces that feel smooth and perform well. I
-          thrive in collaborative teams and love working across design,
-          product, and engineering to ship features that genuinely improve
-          the user experience.
-        </p>
-      </article>
-      <article class="glass-card badges">
-        <h3>Highlights</h3>
-        <ul>
-          <li>Turning complexity into clean, intuitive experiences</li>
-          <li>Blending frontend craft with full-stack depth</li>
-          <li>Delivering polished features with a product-first mindset</li>
-        </ul>
-      </article>
-    </section>
+    <footer class="site-footer">
+      <p class="footer-copyright">© 2025 Rohan Patare • All Rights Reserved</p>
+    </footer>
 
-    <section id="skills" class="glass-card">
-      <div class="section-heading">
-        <p class="eyebrow">Technical Skills</p>
-        <h2>Tools I trust</h2>
-      </div>
-      <div class="tech-grid" id="tech-grid"></div>
-    </section>
+    <button
+      class="scroll-to-top"
+      id="scroll-to-top"
+      onclick="scrollToTop()"
+      aria-label="Scroll to top"
+      style="display: none"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M18 15l-6-6-6 6"></path>
+      </svg>
+    </button>
 
-    <section id="experience" class="timeline">
-      <div class="section-heading">
-        <p class="eyebrow">Career</p>
-        <h2>Recent Experience</h2>
-      </div>
-      <ol class="timeline-list" id="experience-list"></ol>
-    </section>
-
-    <section id="projects" class="glass-card">
-      <div class="section-heading">
-        <p class="eyebrow">Portfolio</p>
-        <h2>Featured Projects</h2>
-      </div>
-      <div class="projects-grid" id="projects-grid"></div>
-    </section>
-
-    <section id="services" class="glass-card">
-      <div class="section-heading">
-        <p class="eyebrow">What I Offer</p>
-        <h2>Services</h2>
-      </div>
-      <div class="services-grid">
-        <div class="service-card glass-card">
-          <div class="service-header">
-            <h3>Frontend Development</h3>
-            <div class="service-icon">⚛️</div>
-          </div>
-          <p>Modern, intuitive, and performant interfaces built with React & TypeScript.</p>
-        </div>
-        <div class="service-card glass-card">
-          <div class="service-header">
-            <h3>Full-Stack MERN Development</h3>
-            <div class="service-icon">🚀</div>
-          </div>
-          <p>End-to-end feature delivery: UI, APIs, backend logic, and database workflows.</p>
-        </div>
-        <div class="service-card glass-card">
-          <div class="service-header">
-            <h3>API Development & Integration</h3>
-            <div class="service-icon">🔌</div>
-          </div>
-          <p>Building and integrating REST APIs for smooth, reliable communication.</p>
-        </div>
-        <div class="service-card glass-card">
-          <div class="service-header">
-            <h3>Performance Optimization</h3>
-            <div class="service-icon">⚡</div>
-          </div>
-          <p>Improving speed, stability, and overall application performance.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="education" class="grid-section">
-      <article class="glass-card education-card">
-        <div class="education-header">
-          <div class="education-icon">🎓</div>
-          <div class="section-heading">
-            <p class="eyebrow">Education</p>
-            <h2>Foundations</h2>
-          </div>
-        </div>
-        <div class="education-content">
-          <h3 class="edu-title">Bachelor of Computer Engineering</h3>
-          <p class="edu-institution">Vishwakarma Institute of Technology, Pune</p>
-          <div class="edu-meta">
-            <span class="edu-period">Jun 2016 — May 2020</span>
-            <span class="edu-separator">·</span>
-            <span class="edu-cpi">CPI: 7.9</span>
-          </div>
-        </div>
-      </article>
-      <article class="glass-card certification-card">
-        <div class="certification-header">
-          <div class="certification-icon">🏆</div>
-          <div class="section-heading">
-            <p class="eyebrow">Certifications</p>
-            <h2>Recognition</h2>
-          </div>
-        </div>
-        <div class="certification-content">
-          <p class="certification-text">
-            Certificate of Appreciation for leading Flight Seatmap
-            Integration & Flights Polling at Musafir.com.
-          </p>
-        </div>
-      </article>
-    </section>
-
-    <section id="contact" class="contact glass-card">
-      <div class="section-heading">
-        <p class="eyebrow">Get in touch</p>
-        <h2>Let's work together</h2>
-      </div>
-      <p class="contact-intro">
-        I'm always open to discussing new projects, creative ideas, or
-        opportunities to be part of your vision. Whether you're looking to
-        build a scalable web application, improve your existing platform, or
-        need a technical consultation, let's connect.
-      </p>
-      <div class="contact-status">
-        <span class="status-indicator"></span>
-        <span>Available for freelance projects and full-time opportunities</span>
-      </div>
-      <div class="contact-methods">
-        <a href="mailto:rohanpatare98@gmail.com" class="contact-method" target="_blank" rel="noreferrer">
-          <div class="contact-icon">✉️</div>
-          <div class="contact-details">
-            <span class="contact-label">Email</span>
-            <span class="contact-value">rohanpatare98@gmail.com</span>
-          </div>
-        </a>
-        <a href="https://www.linkedin.com/in/rohan-patare-75b599162" class="contact-method" target="_blank" rel="noreferrer">
-          <div class="contact-icon">💼</div>
-          <div class="contact-details">
-            <span class="contact-label">LinkedIn</span>
-            <span class="contact-value">Connect with me</span>
-          </div>
-        </a>
-        <a href="https://github.com/Rohanp28" class="contact-method" target="_blank" rel="noreferrer">
-          <div class="contact-icon">💻</div>
-          <div class="contact-details">
-            <span class="contact-label">GitHub</span>
-            <span class="contact-value">View my work</span>
-          </div>
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p class="footer-copyright">© 2025 Rohan Patare • All Rights Reserved</p>
-  </footer>
-
-  <button class="scroll-to-top" id="scroll-to-top" onclick="scrollToTop()" aria-label="Scroll to top" style="display: none;">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M18 15l-6-6-6 6"></path>
-    </svg>
-  </button>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
-
